@@ -113,7 +113,7 @@ def ruta_a_direcciones(ruta): # Para saber si va hacia arriba, abajo, izquierda 
 
 
 if __name__ == "__main__":
-    laberintos = cargar_laberintos("laberintos.txt")
+    laberintos = cargar_laberintos("laberintos.txt") # Si no exist el archivo no funcionara el programa, asi que asegurese de que exista
     for i, lab in enumerate(laberintos):
         print(f"Laberinto {i+1}:")
 
@@ -121,14 +121,14 @@ if __name__ == "__main__":
         print("DFS →", pasos_dfs)
         if ruta_dfs:
             ruta_completa = [lab["start"]] + ruta_dfs
-            print("Ruta:", ruta_completa)
+            #print("Ruta:", ruta_completa)
             print("Movimientos:", ruta_a_direcciones(ruta_completa))
 
-        pasos_uc, ruta_uc = costo_uniforme(lab)
-        print("Costo uniforme →", pasos_uc)
-        if ruta_uc:
-            ruta_completa = [lab["start"]] + ruta_uc
-            print("Ruta:", ruta_completa)
+        pasos_co, ruta_co = costo_uniforme(lab)
+        print("Costo uniforme →", pasos_co)
+        if ruta_co:
+            ruta_completa = [lab["start"]] + ruta_co
+            #print("Ruta:", ruta_completa)
             print("Movimientos:", ruta_a_direcciones(ruta_completa))
 
         print()

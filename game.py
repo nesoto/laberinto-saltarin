@@ -1,9 +1,10 @@
 import pygame
 import sys
-from agente import costo_uniforme, cargar_laberintos
+from agente import costo_uniforme, cargar_laberintos, dfs
 
-# Inicializamos PyGame
 pygame.init()
+
+# Configuración de la pantalla
 
 CELL_SIZE = 50
 WHITE = (255, 255, 255)
@@ -43,6 +44,7 @@ def preparar_laberinto(lab):
 
     # Resolver laberinto
     _, ruta = costo_uniforme(lab)
+    # _, ruta = dfs(lab) Descomentar para usar DFS
     ruta_completa = [lab["start"]] + ruta if ruta else []
 
     # Reset animación
@@ -74,7 +76,7 @@ if __name__ == "__main__":
                 running = False
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
-                    # Siguiente laberinto
+                    # Siguiente laberinto usando en el espacio
                     indice_laberinto = (indice_laberinto + 1) % len(laberintos)
                     preparar_laberinto(laberintos[indice_laberinto])
 

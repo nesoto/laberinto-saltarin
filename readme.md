@@ -9,6 +9,11 @@ Este proyecto implementa el "Laberinto Saltarín" para el curso de Inteligencia 
   - **Costo Uniforme** (Búsqueda óptima)
 - Animación del recorrido de la solución.
 - Soporte para múltiples laberintos y cambio entre ellos (barra espaciadora).
+  
+## Requisitos
+- Python 3.8 o superior
+- PyGame
+- La existencia de un archivo `laberintos.txt` en el mismo directorio que el script.
 
 ## Cómo ejecutar
 
@@ -30,4 +35,9 @@ Este proyecto implementa el "Laberinto Saltarín" para el curso de Inteligencia 
     ```bash
     python3 game.py
     ```
+## Adicionales
+- Si se quiere ver el numero de movimientos y la ruta de la solución ejecute el programa con el siguiente comando
 
+    ```bash
+    python3 agente.py
+    ```
